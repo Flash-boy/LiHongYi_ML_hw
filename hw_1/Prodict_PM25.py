@@ -37,7 +37,6 @@ for i in range(len(x)):
         if std_x[j]!=0:
             x[i][j]=(x[i][j]-mean_x[j])/std_x[j]
 
-
 # 使用GD，并且采用线性回归模型
 def GD(X,Y,W,learning_rate,Iteration,lambdaL2):
     listCost = []
@@ -100,6 +99,8 @@ plt.plot(itera_x,listCost_gd,color='r')
 plt.plot(itera_x,listCost_gd_1,color='g')
 plt.plot(itera_x,listCost_ada,color='b')
 plt.legend(['gd','gd+lambdaL2','ada'])
+plt.xlabel("iteration")
+plt.ylabel("Loss")
 plt.show()
 
 ###---test---###
@@ -139,7 +140,7 @@ ada_list = pre_y_ada.reshape(240)
 correct_list = test_y.reshape(240)
 test_data_index = range(240)
 #正确PM2.5图
-plt.figure(figsize=(8,8))
+plt.figure(figsize=(10,10))
 plt.subplot(221)
 plt.plot(test_data_index,correct_list,'k--')
 plt.title("ANS")
